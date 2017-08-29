@@ -1,0 +1,69 @@
+% !TEX encoding = UTF-8 Unicode
+
+\documentclass{article}
+
+\usepackage{amsmath,amssymb, amsfonts, amsthm, titling, url, array}
+\usepackage[hangul]{kotex}
+\usepackage{kotex-logo}
+
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage{dhucs-nanumfont}
+\else\ifXeTeX
+  \setmainhangulfont[Ligatures=TeX]{HCR Batang LVT}
+  \setsanshangulfont[Ligatures=TeX]{HCR Dotum LVT}
+\else\ifLuaTeX
+  \setmainhangulfont[Ligatures=TeX]{HCR Batang LVT}
+  \setsanshangulfont[Ligatures=TeX]{HCR Dotum LVT}
+\fi\fi\fi
+\usepackage{tikz}
+\usepackage{tcolorbox}
+
+\setlength{\parindent}{0.4em}
+\setlength{\parskip}{0.5em}
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{ex}{Ex}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem*{cor}{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+\newtheorem{conj}{Conjecture}[section]
+\newtheorem{exmp}{Example}[section]
+
+\theoremstyle{remark}
+\newtheorem*{rem}{Remark}
+\newtheorem*{note}{Note}
+
+
+\begin{document}
+
+\title{Programming Exercises}
+\author{Young Hand}
+\date{\today}
+
+\maketitle
+
+\newpage
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+
+
+\section{언어}
+
+\paragraph{utf8, ucs16, mbcs간의 코드 변환과 인코딩 사용 방법}
+다양한 인코딩이 있고 *nx 계열은 utf8로 정착되었고 윈도우 계열은 ucs16으로 정리되었다. 
+utf8을 쓸 때 std::string을 사용하면 되는 유닉스 계열과 ucs16은 wstring을 쓰고 
+std::string은 ascii나 mbcs 문자열인 윈도우 때문에 정리가 필요하다. 
+
+\begin{ex}[코드 변환]
+ucs16과 utf8 간의 코드 변환 구조를 설명하고 이를 처리하는 함수를 작성하거나 
+기존에 있는 코드를 분석하여 정리한다.
+\end{ex}
+
+
+\end{document}
